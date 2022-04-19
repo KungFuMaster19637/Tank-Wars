@@ -57,6 +57,19 @@
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\6.Imports\Destroyed_city_FREE\Standard Assets\Water (Pro Only)\Sources\Scripts\Water.cs" />
     <Compile Include="Assets\6.Imports\Destroyed_city_FREE\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\1.Scripts\Managers\OptionsManager.cs" />
+    <Compile Include="Assets\1.Scripts\Managers\MainFlowManager.cs" />
+    <Compile Include="Assets\1.Scripts\Canvas\AnimatedCanvasVirtual.cs" />
+    <Compile Include="Assets\1.Scripts\Canvas\IAnimatedCanvas.cs" />
+    <Compile Include="Assets\1.Scripts\Canvas\MainMenuCanvas.cs" />
+    <Compile Include="Assets\1.Scripts\Canvas\SelectCanvas.cs" />
+    <Compile Include="Assets\1.Scripts\Canvas\OptionsCanvas.cs" />
+    <Compile Include="Assets\1.Scripts\Canvas\MultiplayerCanvas.cs" />
+    <Compile Include="Assets\1.Scripts\Managers\SelectManager.cs" />
+    <Compile Include="Assets\4.ScriptableObjects\Scripts\VehicleSO.cs" />
+    <Compile Include="Assets\4.ScriptableObjects\Scripts\TankSO.cs" />
+    <Compile Include="Assets\1.Scripts\Controllers\TankController.cs" />
+    <Compile Include="Assets\1.Scripts\Controllers\TankMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
