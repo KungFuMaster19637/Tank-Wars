@@ -5,37 +5,44 @@ using UnityEngine;
 public class TankMovement : MonoBehaviour
 {
     [SerializeField] private TankSO _tankSO;
+    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private Transform _cam;
 
-    public CharacterController controller;
-    public Transform cam;
-
-    public float speed = 6;
-    public float gravity = -9.81f;
-    public float jumpHeight = 3;
-    Vector3 velocity;
-
-    float turnSmoothVelocity;
-    public float turnSmoothTime = 0.1f;
+    private float turnSmoothVelocity = 0.1f;
 
     // Update is called once per frame
     void Update()
     {
-        //gravity
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-        //walk
-        float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        Vector3 direction = new Vector3(0f, 0f, vertical).normalized;
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            //Rotate Left
+            Debug.Log("rotating left");
+            transform.Rotate(-Vector3.up * _tankSO.MaxRotationSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            //Rotate right
+            Debug.Log("rotating right");
+
+            transform.Rotate(Vector3.up * _tankSO.MaxRotationSpeed * Time.deltaTime);
+        }
 
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            Debug.Log("here" + _rigidbody.velocity);
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, _tankSO.MaxRotationSpeed);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+
+            float currentSpeed = _rigidbody.velocity.magnitude;
+            float actualForce = _tankSO.MoveForce * (1 - currentSpeed / _tankSO.MaxMovementSpeed);
+            Debug.Log(actualForce);
+            _rigidbody.AddForce(moveDir.normalized * actualForce * _rigidbody.mass);
         }
     }
 }

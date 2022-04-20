@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &700773518599554577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6505646714912237093}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6505646714912237093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700773518599554577}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.85, z: 2.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3549317410934042148}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &804687017186084365
 GameObject:
   m_ObjectHideFlags: 3
@@ -463,7 +493,8 @@ GameObject:
   - component: {fileID: 3549317410934042148}
   - component: {fileID: 5017875560846815264}
   - component: {fileID: 8129728682883972763}
-  - component: {fileID: 5373279148586940855}
+  - component: {fileID: 6043154987415936998}
+  - component: {fileID: 1460181503573931145}
   m_Layer: 0
   m_Name: M5A1 Stuart
   m_TagString: Untagged
@@ -484,6 +515,7 @@ Transform:
   m_Children:
   - {fileID: 6681039918339779764}
   - {fileID: 7190873930994030322}
+  - {fileID: 6505646714912237093}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -499,7 +531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f17671b623d6684b8db6e72a673c6eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tankSO: {fileID: 0}
+  _tankSO: {fileID: 11400000, guid: da7b38486d646774185e20d168737238, type: 2}
+  _firePoint: {fileID: 6505646714912237093}
 --- !u!114 &8129728682883972763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,15 +545,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d86299d3f58d949b801d56d546ed6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tankSO: {fileID: 0}
-  controller: {fileID: 5373279148586940855}
-  cam: {fileID: 7190873930994030322}
-  speed: 6
-  gravity: -9.81
-  jumpHeight: 3
-  turnSmoothTime: 1
---- !u!143 &5373279148586940855
-CharacterController:
+  _tankSO: {fileID: 11400000, guid: da7b38486d646774185e20d168737238, type: 2}
+  _rigidbody: {fileID: 6043154987415936998}
+  _cam: {fileID: 7190873930994030322}
+--- !u!54 &6043154987415936998
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549317410934042149}
+  serializedVersion: 2
+  m_Mass: 50
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!65 &1460181503573931145
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -530,13 +575,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.4010644, y: 2.5299418, z: 5.133313}
+  m_Center: {x: 0.029674768, y: 1.1572202, z: 0.041337013}
 --- !u!1 &7189727819834302234
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +736,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7387799014376092353}
-  m_LocalRotation: {x: 0.2723272, y: -0.000000009114283, z: 0.0000000025795626, w: 0.96220475}
+  m_LocalRotation: {x: 0.2723272, y: 0.0000000405539, z: -0.000000011477733, w: 0.96220475}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -770,7 +810,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7606819870042907160}
-  m_LocalRotation: {x: 0.28978413, y: 0.000000015081854, z: -0.000000004566418, w: 0.95709205}
+  m_LocalRotation: {x: 0.28978413, y: -0.00000001943168, z: 0.000000005883439, w: 0.95709205}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

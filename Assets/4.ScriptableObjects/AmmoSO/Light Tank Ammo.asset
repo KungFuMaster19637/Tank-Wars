@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401f53a0a649a3f439922d8b065434c4, type: 3}
+  m_Name: Light Tank Ammo
+  m_EditorClassIdentifier: 
+  TravelSpeed: 100
+  FirePoint: {fileID: 0}
+  AmmoPrefab: {fileID: 4141816625728571918, guid: 8692641ea90d7784cb6679cee0dec0b2, type: 3}
+  ImpactParticles: {fileID: 0}
