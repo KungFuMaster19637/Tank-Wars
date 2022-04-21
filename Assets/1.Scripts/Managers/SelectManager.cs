@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class SelectManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Singleton
+    public static SelectManager Instance { get; private set; }
+
+
+    public void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnDestroy()
     {
-        
+        Instance = null;
     }
+    #endregion
+
+    [SerializeField] private TankSO _listOfTanks;
+
+
+
 }

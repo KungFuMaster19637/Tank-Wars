@@ -6,10 +6,11 @@ using UnityEngine;
 public class TankSO : VehicleSO
 {
     public AmmoSO Ammo;
+    public int AmmoCapacity;
     public float MoveForce;
     public float MaxMovementSpeed;
     public float MaxRotationSpeed;
-    public float FireRate;
+    public float RateOfFire;
     public float FirePower;
 
 

@@ -53,25 +53,25 @@
     <UnityVersion>2020.3.23f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\1.Scripts\Canvas\MainMenuCanvas.cs" />
+    <Compile Include="Assets\1.Scripts\Canvas\MenuCanvas\MainMenuCanvas.cs" />
     <Compile Include="Assets\1.Scripts\Managers\OptionsManager.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\1.Scripts\Controllers\TankMovement.cs" />
     <Compile Include="Assets\1.Scripts\Controllers\TankController.cs" />
-    <Compile Include="Assets\1.Scripts\Canvas\OptionsCanvas.cs" />
-    <Compile Include="Assets\1.Scripts\Canvas\MultiplayerCanvas.cs" />
+    <Compile Include="Assets\1.Scripts\Canvas\MenuCanvas\OptionsCanvas.cs" />
+    <Compile Include="Assets\1.Scripts\Canvas\MenuCanvas\MultiplayerCanvas.cs" />
     <Compile Include="Assets\4.ScriptableObjects\Scripts\TankSO.cs" />
+    <Compile Include="Assets\4.ScriptableObjects\Scripts\AmmoSO.cs" />
     <Compile Include="Assets\1.Scripts\Canvas\IAnimatedCanvas.cs" />
     <Compile Include="Assets\1.Scripts\Managers\SelectManager.cs" />
-    <Compile Include="Assets\1.Scripts\Canvas\SelectCanvas.cs" />
+    <Compile Include="Assets\1.Scripts\Canvas\MenuCanvas\SelectCanvas.cs" />
     <Compile Include="Assets\6.Imports\WW2 Armed Forces Demo\Scripts\Scroll_Track.cs" />
+    <Compile Include="Assets\1.Scripts\Controllers\AmmoController.cs" />
     <Compile Include="Assets\1.Scripts\Canvas\AnimatedCanvasVirtual.cs" />
     <Compile Include="Assets\4.ScriptableObjects\Scripts\VehicleSO.cs" />
     <Compile Include="Assets\6.Imports\Destroyed_city_FREE\Standard Assets\Water (Pro Only)\Sources\Scripts\Water.cs" />
     <Compile Include="Assets\6.Imports\Destroyed_city_FREE\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
     <Compile Include="Assets\1.Scripts\Managers\MainFlowManager.cs" />
-    <Compile Include="Assets\4.ScriptableObjects\Scripts\AmmoSO.cs" />
-    <Compile Include="Assets\1.Scripts\Controllers\AmmoController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
