@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f17671b623d6684b8db6e72a673c6eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tankSO: {fileID: 11400000, guid: da7b38486d646774185e20d168737238, type: 2}
+  _tankSO: {fileID: 11400000, guid: 2467566a71534eb4bb9c9d9bdfe982f4, type: 2}
   _firePoint: {fileID: 6505646714912237093}
 --- !u!114 &8129728682883972763
 MonoBehaviour:
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d86299d3f58d949b801d56d546ed6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tankSO: {fileID: 11400000, guid: da7b38486d646774185e20d168737238, type: 2}
+  _tankSO: {fileID: 11400000, guid: 2467566a71534eb4bb9c9d9bdfe982f4, type: 2}
   _rigidbody: {fileID: 6043154987415936998}
   _cam: {fileID: 7190873930994030322}
 --- !u!54 &6043154987415936998
@@ -557,8 +557,8 @@ Rigidbody:
   m_GameObject: {fileID: 3549317410934042149}
   serializedVersion: 2
   m_Mass: 50
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 5
+  m_AngularDrag: 5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0

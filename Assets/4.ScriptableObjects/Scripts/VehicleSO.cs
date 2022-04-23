@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum Faction
 {
-    China,
+    France,
     Germany,
     Italy,
     Japan,

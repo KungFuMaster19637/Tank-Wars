@@ -119,5 +119,10 @@ public class MainFlowManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void OnBackToMainButton()
+    {
+        SetMainFlowState(MainSceneState.Main);
+
+    }
     #endregion
 }

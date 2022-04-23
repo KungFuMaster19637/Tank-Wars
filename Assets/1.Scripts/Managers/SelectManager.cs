@@ -27,7 +27,7 @@ public class SelectManager : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] private TankSO _listOfTanks;
+    public List<TankSO> TankList = new List<TankSO>();
 
 
 

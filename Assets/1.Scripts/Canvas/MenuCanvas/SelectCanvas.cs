@@ -24,20 +24,27 @@ public class SelectCanvas : AnimatedCanvasVirtual
     [SerializeField] private Image _rateOfFireBar;
     [SerializeField] private Image _speedBar;
 
-    private float _maxHealth;
-    private float _maxAmmoCapacity;
-    private float _maxFirePower;
-    private float _maxRateOfFire;
-    private float _maxSpeed;
+    private float _maxHealth = 800;
+    private float _maxAmmoCapacity = 20;
+    private float _maxFirePower = 40;
+    private float _maxRateOfFire = 60;
+    private float _maxSpeed = 70;
 
     [SerializeField] private Sprite[] _flags;
-    public List<TankSO> TankList = new List<TankSO>();
     private int _currentSelectedTankIndex;
 
+    private void Awake()
+    {
+        //Default 0 
+        _currentSelectedTankIndex = 0;
+        RefreshUI(_currentSelectedTankIndex);
+    }
 
     public void RightButton()
     {
-        if (_currentSelectedTankIndex + 1 >= TankList.Count)
+        Debug.Log("clicke r");
+
+        if (_currentSelectedTankIndex + 1 >= SelectManager.Instance.TankList.Count)
         {
             _currentSelectedTankIndex = 0;
         }
@@ -45,23 +52,34 @@ public class SelectCanvas : AnimatedCanvasVirtual
         {
             _currentSelectedTankIndex++;
         }
+        RefreshUI(_currentSelectedTankIndex);
     }
 
     public void LeftButton()
     {
         if (_currentSelectedTankIndex - 1 <= -1)
         {
-            _currentSelectedTankIndex = TankList.Count;
+            _currentSelectedTankIndex = SelectManager.Instance.TankList.Count - 1;
         }
         else
         {
             _currentSelectedTankIndex--;
         }
+        RefreshUI(_currentSelectedTankIndex);
+    }
+    public void ChooseButton()
+    {
+
+    }
+
+    public void BackButton()
+    {
+        MainFlowManager.Instance.OnBackToMainButton();
     }
 
     public void RefreshUI(int currentTank)
     {
-        TankSO tankSelected = TankList[currentTank];
+        TankSO tankSelected = SelectManager.Instance.TankList[currentTank];
         //Tank Name and Flag
         _tankNameText.text = tankSelected.VehicleName.ToString();
         _tankFaction.sprite = GetTankFlag(tankSelected);
@@ -85,7 +103,7 @@ public class SelectCanvas : AnimatedCanvasVirtual
     {
         switch(currentTank.VehicleFaction)
         {
-            case Faction.China:
+            case Faction.France:
                 return _flags[0];
             case Faction.Germany:
                 return _flags[1];
@@ -106,7 +124,7 @@ public class SelectCanvas : AnimatedCanvasVirtual
 
     private float GetStatsRatio(float currentStat, float maxStat)
     {
-        return maxStat / currentStat;
+        return currentStat / maxStat;
     }
 
 }
