@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: M5A1 Stuart
   VehicleFaction: 6
-  VehiclePrefab: {fileID: 0}
+  VehiclePrefab: {fileID: 6606005299345233778, guid: 7aff9190f32585948a8d7838a859933a, type: 3}
   MaxHealth: 200
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 11400000, guid: 1d013c5b20ee30f4a922cee18caf6ae5, type: 2}

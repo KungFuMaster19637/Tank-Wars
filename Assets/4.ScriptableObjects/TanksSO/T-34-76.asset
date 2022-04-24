@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: T-34-76
   VehicleFaction: 4
-  VehiclePrefab: {fileID: 0}
-  MaxHealth: 0
+  VehiclePrefab: {fileID: 605512819774308200, guid: 2ebf979aaaeff1a45966f55f233733e7, type: 3}
+  MaxHealth: 45
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 0}
-  AmmoCapacity: 0
-  MoveForce: 0
-  MaxMovementSpeed: 0
-  MaxRotationSpeed: 0
-  RateOfFire: 0
+  AmmoCapacity: 75
+  MoveForce: 45
+  MaxMovementSpeed: 4576
+  MaxRotationSpeed: 768
+  RateOfFire: 12
   FirePower: 0

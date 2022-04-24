@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: KV-2
   VehicleFaction: 4
-  VehiclePrefab: {fileID: 0}
-  MaxHealth: 0
+  VehiclePrefab: {fileID: 8322648213895008230, guid: 639da28ec7bc5cc47837261c20a2685c, type: 3}
+  MaxHealth: 540
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 0}
-  AmmoCapacity: 0
-  MoveForce: 0
-  MaxMovementSpeed: 0
-  MaxRotationSpeed: 0
-  RateOfFire: 0
+  AmmoCapacity: 12
+  MoveForce: 7
+  MaxMovementSpeed: 124
+  MaxRotationSpeed: 5
+  RateOfFire: 51
   FirePower: 0

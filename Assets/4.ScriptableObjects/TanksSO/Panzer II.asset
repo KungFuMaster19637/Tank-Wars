@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: Panzer II
   VehicleFaction: 1
-  VehiclePrefab: {fileID: 0}
-  MaxHealth: 0
+  VehiclePrefab: {fileID: 4745858458928097138, guid: 7c4525d5a46da0b47bbbdfd14c376381, type: 3}
+  MaxHealth: 2400
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 0}
-  AmmoCapacity: 0
-  MoveForce: 0
-  MaxMovementSpeed: 0
-  MaxRotationSpeed: 0
-  RateOfFire: 0
-  FirePower: 0
+  AmmoCapacity: 1241
+  MoveForce: 14
+  MaxMovementSpeed: 5
+  MaxRotationSpeed: 57
+  RateOfFire: 12
+  FirePower: 45

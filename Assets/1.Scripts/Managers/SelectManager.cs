@@ -28,6 +28,7 @@ public class SelectManager : MonoBehaviour
     #endregion
 
     public List<TankSO> TankList = new List<TankSO>();
+    public Transform TankSpawn;
 
 
 

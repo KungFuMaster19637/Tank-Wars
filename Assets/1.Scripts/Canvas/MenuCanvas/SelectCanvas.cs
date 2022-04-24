@@ -31,12 +31,14 @@ public class SelectCanvas : AnimatedCanvasVirtual
     private float _maxSpeed = 70;
 
     [SerializeField] private Sprite[] _flags;
+    private GameObject _currentTankGO;
     private int _currentSelectedTankIndex;
 
     private void Awake()
     {
         //Default 0 
         _currentSelectedTankIndex = 0;
+        RefreshGO(_currentSelectedTankIndex);
         RefreshUI(_currentSelectedTankIndex);
     }
 
@@ -53,6 +55,7 @@ public class SelectCanvas : AnimatedCanvasVirtual
             _currentSelectedTankIndex++;
         }
         RefreshUI(_currentSelectedTankIndex);
+        RefreshGO(_currentSelectedTankIndex);
     }
 
     public void LeftButton()
@@ -66,6 +69,7 @@ public class SelectCanvas : AnimatedCanvasVirtual
             _currentSelectedTankIndex--;
         }
         RefreshUI(_currentSelectedTankIndex);
+        RefreshGO(_currentSelectedTankIndex);
     }
     public void ChooseButton()
     {
@@ -77,7 +81,7 @@ public class SelectCanvas : AnimatedCanvasVirtual
         MainFlowManager.Instance.OnBackToMainButton();
     }
 
-    public void RefreshUI(int currentTank)
+    private void RefreshUI(int currentTank)
     {
         TankSO tankSelected = SelectManager.Instance.TankList[currentTank];
         //Tank Name and Flag
@@ -97,6 +101,16 @@ public class SelectCanvas : AnimatedCanvasVirtual
         _firepowerBar.fillAmount = GetStatsRatio(tankSelected.FirePower, _maxFirePower);
         _rateOfFireBar.fillAmount = GetStatsRatio(tankSelected.RateOfFire, _maxRateOfFire);
         _speedBar.fillAmount = GetStatsRatio(tankSelected.MaxMovementSpeed, _maxSpeed);
+    }
+
+    private void RefreshGO(int currentTank)
+    {
+        if (_currentTankGO != null) Destroy(_currentTankGO);
+        TankSO tankSelected = SelectManager.Instance.TankList[currentTank];
+        _currentTankGO = Instantiate(tankSelected.VehiclePrefab, SelectManager.Instance.TankSpawn);
+
+
+
     }
 
     private Sprite GetTankFlag(TankSO currentTank)

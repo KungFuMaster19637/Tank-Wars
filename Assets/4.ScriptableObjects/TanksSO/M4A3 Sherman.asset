@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: M4A3 Sherman
   VehicleFaction: 6
-  VehiclePrefab: {fileID: 0}
-  MaxHealth: 0
+  VehiclePrefab: {fileID: 1335991254495539031, guid: ad899c9168e7f5c4db7f2447350a5249, type: 3}
+  MaxHealth: 127
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 0}
-  AmmoCapacity: 0
-  MoveForce: 0
-  MaxMovementSpeed: 0
-  MaxRotationSpeed: 0
-  RateOfFire: 0
-  FirePower: 0
+  AmmoCapacity: 457
+  MoveForce: 6
+  MaxMovementSpeed: 475
+  MaxRotationSpeed: 8
+  RateOfFire: 7
+  FirePower: 54

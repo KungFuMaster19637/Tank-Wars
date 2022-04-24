@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: Ha-Go
   VehicleFaction: 3
-  VehiclePrefab: {fileID: 0}
+  VehiclePrefab: {fileID: 1450264491374018949, guid: 5a3ffe14bfec95a44a8670b30c366479, type: 3}
   MaxHealth: 4245
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 11400000, guid: 1d013c5b20ee30f4a922cee18caf6ae5, type: 2}
