@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401f53a0a649a3f439922d8b065434c4, type: 3}
   m_Name: Light Tank Ammo
   m_EditorClassIdentifier: 
+  AmmoUI: {fileID: 5169316867630700123, guid: 4ad9f48ff3a5cf844ac5e30bddb31a66, type: 3}
   TravelSpeed: 100
-  FirePoint: {fileID: 0}
+  FirePointRotation: {fileID: 0}
   AmmoPrefab: {fileID: 4141816625728571918, guid: 8692641ea90d7784cb6679cee0dec0b2, type: 3}
   ImpactParticles: {fileID: 0}

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SelectManager : MonoBehaviour
 {
+    public static TankSO SelectedTank; 
+    public static MapSO SelectedMap;
+
     #region Singleton
     public static SelectManager Instance { get; private set; }
 
@@ -13,6 +16,7 @@ public class SelectManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -28,6 +32,8 @@ public class SelectManager : MonoBehaviour
     #endregion
 
     public List<TankSO> TankList = new List<TankSO>();
+    public List<MapSO> MapList = new List<MapSO>();
+    public List<Sprite> FlagList = new List<Sprite>();
     public Transform TankSpawn;
 
 

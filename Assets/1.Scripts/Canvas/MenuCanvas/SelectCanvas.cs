@@ -30,7 +30,6 @@ public class SelectCanvas : AnimatedCanvasVirtual
     private float _maxRateOfFire = 60;
     private float _maxSpeed = 70;
 
-    [SerializeField] private Sprite[] _flags;
     private GameObject _currentTankGO;
     private int _currentSelectedTankIndex;
 
@@ -44,8 +43,6 @@ public class SelectCanvas : AnimatedCanvasVirtual
 
     public void RightButton()
     {
-        Debug.Log("clicke r");
-
         if (_currentSelectedTankIndex + 1 >= SelectManager.Instance.TankList.Count)
         {
             _currentSelectedTankIndex = 0;
@@ -73,11 +70,13 @@ public class SelectCanvas : AnimatedCanvasVirtual
     }
     public void ChooseButton()
     {
-
+        SelectManager.SelectedTank = SelectManager.Instance.TankList[_currentSelectedTankIndex];
+        MainFlowManager.Instance.OnChooseTankButton();
     }
 
     public void BackButton()
     {
+        SelectManager.SelectedTank = null;
         MainFlowManager.Instance.OnBackToMainButton();
     }
 
@@ -109,6 +108,14 @@ public class SelectCanvas : AnimatedCanvasVirtual
         TankSO tankSelected = SelectManager.Instance.TankList[currentTank];
         _currentTankGO = Instantiate(tankSelected.VehiclePrefab, SelectManager.Instance.TankSpawn);
 
+        //Don't allow tank to move;
+        if (_currentTankGO.GetComponent<TankController>() && _currentTankGO.GetComponent<TankMovement>())
+        {            
+            _currentTankGO.GetComponent<TankController>().enabled = false;
+            _currentTankGO.GetComponent<TankMovement>().enabled = false;
+        }
+
+
 
 
     }
@@ -118,19 +125,19 @@ public class SelectCanvas : AnimatedCanvasVirtual
         switch(currentTank.VehicleFaction)
         {
             case Faction.France:
-                return _flags[0];
+                return SelectManager.Instance.FlagList[0];
             case Faction.Germany:
-                return _flags[1];
+                return SelectManager.Instance.FlagList[1];
             case Faction.Italy:
-                return _flags[2];
+                return SelectManager.Instance.FlagList[2];
             case Faction.Japan:
-                return _flags[3];
+                return SelectManager.Instance.FlagList[3];
             case Faction.Russia:
-                return _flags[4];
+                return SelectManager.Instance.FlagList[4];
             case Faction.UK:
-                return _flags[5];
+                return SelectManager.Instance.FlagList[5];
             case Faction.USA:
-                return _flags[6];
+                return SelectManager.Instance.FlagList[6];
             default:
                 return null;
         }

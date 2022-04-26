@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AmmoSO", menuName = "ScriptableObjects/AmmoSO", order = 3)]
 public class AmmoSO : ScriptableObject
 {
+    public GameObject AmmoUI;
     public float TravelSpeed;
     public Transform FirePointRotation;
     public GameObject AmmoPrefab;

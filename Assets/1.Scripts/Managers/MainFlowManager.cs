@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public enum MainSceneState
@@ -8,6 +9,7 @@ public enum MainSceneState
     None, 
     Main, 
     Select,
+    Map,
     Multiplayer,
     Options
 }
@@ -51,6 +53,10 @@ public class MainFlowManager : MonoBehaviour
     }
     #endregion
 
+    private void Start()
+    {
+        SetMainFlowState(MainSceneState.Main);
+    }
 
     #region Flow State
     private void SetMainFlowState(MainSceneState newState)
@@ -99,6 +105,7 @@ public class MainFlowManager : MonoBehaviour
 
     #region Buttons
 
+    #region Main Menu
     public void OnCampaignButton()
     {
         SetMainFlowState(MainSceneState.Select);
@@ -108,21 +115,41 @@ public class MainFlowManager : MonoBehaviour
     {
         SetMainFlowState(MainSceneState.Multiplayer);
     }
-
     public void OnOptionButton()
     {
         SetMainFlowState(MainSceneState.Options);
     }
-
     public void OnQuitButton()
     {
         Application.Quit();
     }
 
+    #endregion
+
+    #region Select Tank Menu
+    public void OnChooseTankButton()
+    {
+        SetMainFlowState(MainSceneState.Map);
+    }
     public void OnBackToMainButton()
     {
         SetMainFlowState(MainSceneState.Main);
 
     }
+
+    #endregion
+
+    #region Select Map Menu
+    public void OnChooseMapButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void OnBackToSelect()
+    {
+        SetMainFlowState(MainSceneState.Select);
+    }
+    #endregion
+
     #endregion
 }

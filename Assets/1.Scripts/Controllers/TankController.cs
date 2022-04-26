@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TankController : MonoBehaviour
 {
+    public static event System.Action e_TankShot = delegate { }; 
+    public static event System.Action e_TankReloaded = delegate { };
+
     [SerializeField] private TankSO _tankSO;
     [SerializeField] private Transform _firePoint;
 
@@ -31,19 +34,27 @@ public class TankController : MonoBehaviour
     }
     private IEnumerator IE_Shoot()
     {
-        if (_currentAmmo > 0)
+        if (_currentAmmo - 1 > 0)
         {
-            _tankSO.Ammo.FirePointRotation = transform;
-            Instantiate(_tankSO.Ammo.AmmoPrefab, _firePoint.position, transform.rotation);
-            _currentAmmo--;
+            AmmoUsed();
             yield return new WaitForSeconds(_tankSO.RateOfFire);
         }
-        else
+        else if (_currentAmmo - 1 == 0)
         {
+            AmmoUsed();
             Reload();
             yield return new WaitForSeconds(2f);
+            e_TankReloaded();
         }
         _shootLock = null;
+    }
+
+    private void AmmoUsed()
+    {
+        _tankSO.Ammo.FirePointRotation = transform;
+        Instantiate(_tankSO.Ammo.AmmoPrefab, _firePoint.position, transform.rotation);
+        e_TankShot();
+        _currentAmmo--;
     }
 
     private void Reload()
