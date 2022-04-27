@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: KV-2
   VehicleFaction: 4
-  VehiclePrefab: {fileID: 8322648213895008230, guid: 639da28ec7bc5cc47837261c20a2685c, type: 3}
+  VehiclePrefab: {fileID: 1646572287260361527, guid: 131a798343cc1434bbad41242498b3ac, type: 3}
+  CurrentHealth: 0
   MaxHealth: 540
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 0}

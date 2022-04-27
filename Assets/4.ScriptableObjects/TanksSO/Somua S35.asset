@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: Somua S35
   VehicleFaction: 0
-  VehiclePrefab: {fileID: 1285356109209987605, guid: 1b29412902091814aaf3887729342d94, type: 3}
+  VehiclePrefab: {fileID: 2950780399386211713, guid: 120f000a54d04594fbbeb048ad0596d6, type: 3}
+  CurrentHealth: 0
   MaxHealth: 1245
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 11400000, guid: 1d013c5b20ee30f4a922cee18caf6ae5, type: 2}

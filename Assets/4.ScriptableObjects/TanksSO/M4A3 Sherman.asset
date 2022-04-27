@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: M4A3 Sherman
   VehicleFaction: 6
-  VehiclePrefab: {fileID: 1335991254495539031, guid: ad899c9168e7f5c4db7f2447350a5249, type: 3}
+  VehiclePrefab: {fileID: 4610634293180583804, guid: 88880131b2ef2794a8e6da73a67aa6ba, type: 3}
+  CurrentHealth: 0
   MaxHealth: 127
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 0}

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401f53a0a649a3f439922d8b065434c4, type: 3}
+  m_Name: Heavy Tank Ammo
+  m_EditorClassIdentifier: 
+  AmmoUI: {fileID: 5169316867630700123, guid: 133ba2061c9cdd2419c1785d12705056, type: 3}
+  TravelSpeed: 150
+  FirePointRotation: {fileID: 0}
+  AmmoPrefab: {fileID: 4295010484411717248, guid: 319c136f6c8ecf14c9ed63efa9efbfa7, type: 3}
+  ImpactParticles: {fileID: 0}

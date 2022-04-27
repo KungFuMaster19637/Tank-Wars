@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: M1340
   VehicleFaction: 2
-  VehiclePrefab: {fileID: 5084583463408146701, guid: 223da80c35889c24c8850c6a4e112261, type: 3}
+  VehiclePrefab: {fileID: 6140476477111920473, guid: 7656d018807872a43afc07c6f123e40d, type: 3}
+  CurrentHealth: 0
   MaxHealth: 0
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 0}

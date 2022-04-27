@@ -18,8 +18,10 @@ public class VehicleSO : ScriptableObject
     public string VehicleName;
     public Faction VehicleFaction;
     public GameObject VehiclePrefab;
+    public float CurrentHealth;
     public float MaxHealth;
 
     public GameObject RuntimeGO;
+
 
 }

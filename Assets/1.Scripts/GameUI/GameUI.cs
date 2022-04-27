@@ -7,6 +7,7 @@ using TMPro;
 public class GameUI : MonoBehaviour
 {
     [SerializeField] private Transform _ammoSpawnUI;
+    [SerializeField] private Image _healthBar;
     [SerializeField] private TMP_Text _healthText;
 
     private int _ammoIndex;
@@ -14,9 +15,11 @@ public class GameUI : MonoBehaviour
     private void Awake()
     {
         InitTankAmmoUI();
+        OnDamageTaken();
 
         TankController.e_TankShot += OnTankShot;
         TankController.e_TankReloaded += OnTankReload;
+        TankController.e_TakenDamage += OnDamageTaken;
     }
 
 
@@ -24,6 +27,14 @@ public class GameUI : MonoBehaviour
     {
         TankController.e_TankShot -= OnTankShot;
         TankController.e_TankReloaded -= OnTankReload;
+    }
+    private void InitTankAmmoUI()
+    {
+        for (int i = 0; i < SelectManager.SelectedTank.AmmoCapacity; i++)
+        {
+            Instantiate(SelectManager.SelectedTank.Ammo.AmmoUI, _ammoSpawnUI);
+        }
+        _ammoIndex = 0;
     }
 
     private void OnTankShot()
@@ -40,12 +51,11 @@ public class GameUI : MonoBehaviour
         _ammoIndex = 0;
     }
 
-    private void InitTankAmmoUI()
+    private void OnDamageTaken()
     {
-        for (int i = 0; i < SelectManager.SelectedTank.AmmoCapacity; i++)
-        {
-            Instantiate(SelectManager.SelectedTank.Ammo.AmmoUI, _ammoSpawnUI);
-        }
-        _ammoIndex = 0;
+        float currentHealth = SelectManager.SelectedTank.CurrentHealth;
+        float maxHealth = SelectManager.SelectedTank.MaxHealth;
+        _healthText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
+        _healthBar.fillAmount = currentHealth / maxHealth;
     }
 }

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: Hotchkiss H35
   VehicleFaction: 0
-  VehiclePrefab: {fileID: 7914762662502293341, guid: 6c27316a4329175499c8b8a161bbf40c, type: 3}
+  VehiclePrefab: {fileID: 5927722890358516273, guid: df858428e87203d4d901b899a93cf41a, type: 3}
+  CurrentHealth: 0
   MaxHealth: 0
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 0}

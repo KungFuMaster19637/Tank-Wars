@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: Crowmwell IV
   VehicleFaction: 5
-  VehiclePrefab: {fileID: 8461970761184990757, guid: 5f694739ee4c9494c905f4e9353cfe0c, type: 3}
+  VehiclePrefab: {fileID: 6873381237349259736, guid: c8d842c85d07a4c4d84f776f5856b6dd, type: 3}
+  CurrentHealth: 0
   MaxHealth: 2147
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 0}

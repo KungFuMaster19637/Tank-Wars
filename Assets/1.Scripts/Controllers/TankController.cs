@@ -6,6 +6,7 @@ public class TankController : MonoBehaviour
 {
     public static event System.Action e_TankShot = delegate { }; 
     public static event System.Action e_TankReloaded = delegate { };
+    public static event System.Action e_TakenDamage = delegate { };
 
     [SerializeField] private TankSO _tankSO;
     [SerializeField] private Transform _firePoint;
@@ -15,6 +16,7 @@ public class TankController : MonoBehaviour
 
     private void Awake()
     {
+        Init();
         Reload();
     }
 
@@ -24,8 +26,18 @@ public class TankController : MonoBehaviour
         {
             Shoot();
         }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeDamage(7f);
+        }
     }
 
+    private void Init()
+    {
+        _tankSO.CurrentHealth = _tankSO.MaxHealth;
+    }
+
+    #region Shooting
     private void Shoot()
     {
         if (_shootLock != null) { return; }
@@ -60,5 +72,12 @@ public class TankController : MonoBehaviour
     private void Reload()
     {
         _currentAmmo = _tankSO.AmmoCapacity;
+    }
+    #endregion
+
+    public void TakeDamage(float incomingDamage)
+    {
+        SelectManager.SelectedTank.CurrentHealth -= incomingDamage;
+        e_TakenDamage();
     }
 }

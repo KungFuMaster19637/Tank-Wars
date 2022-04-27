@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: Matilda II
   VehicleFaction: 5
-  VehiclePrefab: {fileID: 1416174220442879844, guid: 4dc2293ab5c561140872035453dd1c81, type: 3}
+  VehiclePrefab: {fileID: 1426530566298796796, guid: 67a58b4aab404a4418e2528d81bf8752, type: 3}
+  CurrentHealth: 0
   MaxHealth: 450
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 0}

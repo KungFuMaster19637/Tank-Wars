@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehicleName: Chi-Ha
   VehicleFaction: 3
-  VehiclePrefab: {fileID: 3123274698610318490, guid: 6b0b29e0168b61c4ab830ad250f7bf62, type: 3}
+  VehiclePrefab: {fileID: 4226006683046844081, guid: e8a6a13d51c0fc74a9f5a62be002773b, type: 3}
+  CurrentHealth: 0
   MaxHealth: 124
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 11400000, guid: 1d013c5b20ee30f4a922cee18caf6ae5, type: 2}
