@@ -68,14 +68,17 @@
     <Compile Include="Assets\1.Scripts\Managers\SelectManager.cs" />
     <Compile Include="Assets\1.Scripts\Canvas\MenuCanvas\SelectCanvas.cs" />
     <Compile Include="Assets\6.Imports\WW2 Armed Forces Demo\Scripts\Scroll_Track.cs" />
+    <Compile Include="Assets\1.Scripts\GameUI\GameUI.cs" />
     <Compile Include="Assets\1.Scripts\Controllers\AmmoController.cs" />
     <Compile Include="Assets\1.Scripts\Canvas\AnimatedCanvasVirtual.cs" />
+    <Compile Include="Assets\1.Scripts\Managers\GameplayManager.cs" />
     <Compile Include="Assets\4.ScriptableObjects\Scripts\VehicleSO.cs" />
     <Compile Include="Assets\6.Imports\Destroyed_city_FREE\Standard Assets\Water (Pro Only)\Sources\Scripts\Water.cs" />
     <Compile Include="Assets\6.Imports\Destroyed_city_FREE\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
     <Compile Include="Assets\1.Scripts\Managers\MainFlowManager.cs" />
-    <Compile Include="Assets\1.Scripts\Managers\GameplayManager.cs" />
-    <Compile Include="Assets\1.Scripts\GameUI\GameUI.cs" />
+    <Compile Include="Assets\1.Scripts\Managers\ObjectiveManager.cs" />
+    <Compile Include="Assets\4.ScriptableObjects\Scripts\DestroySO.cs" />
+    <Compile Include="Assets\1.Scripts\Controllers\BuildingController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -24,11 +24,11 @@ public class SelectCanvas : AnimatedCanvasVirtual
     [SerializeField] private Image _rateOfFireBar;
     [SerializeField] private Image _speedBar;
 
-    private float _maxHealth = 800;
-    private float _maxAmmoCapacity = 20;
-    private float _maxFirePower = 40;
-    private float _maxRateOfFire = 60;
-    private float _maxSpeed = 70;
+    private float _maxHealth = 1200;
+    private float _maxAmmoCapacity = 12;
+    private float _maxFirePower = 200;
+    private float _maxRateOfFire = 5;
+    private float _maxSpeed = 30;
 
     private GameObject _currentTankGO;
     private int _currentSelectedTankIndex;
@@ -88,17 +88,17 @@ public class SelectCanvas : AnimatedCanvasVirtual
         _tankFaction.sprite = GetTankFlag(tankSelected);
 
         //Tank stats
-        _healthText.text = tankSelected.MaxHealth.ToString();
-        _ammoCapacityText.text = tankSelected.AmmoCapacity.ToString();
-        _firepowerText.text = tankSelected.FirePower.ToString();
-        _rateOfFireText.text = tankSelected.RateOfFire.ToString();
-        _speedAmount.text = tankSelected.MaxMovementSpeed.ToString();
+        _healthText.text = "Health: " + tankSelected.MaxHealth.ToString();
+        _ammoCapacityText.text = "Ammo Capacity: " + tankSelected.AmmoCapacity.ToString();
+        _firepowerText.text = "Firepower: " + tankSelected.FirePower.ToString();
+        _rateOfFireText.text = "Rate Of Fire: " + tankSelected.RateOfFire.ToString();
+        _speedAmount.text = "Speed: " + tankSelected.MaxMovementSpeed.ToString();
 
         //Tank bars
         _healthBar.fillAmount = GetStatsRatio(tankSelected.MaxHealth, _maxHealth);
         _ammoCapacityBar.fillAmount = GetStatsRatio(tankSelected.AmmoCapacity, _maxAmmoCapacity);
         _firepowerBar.fillAmount = GetStatsRatio(tankSelected.FirePower, _maxFirePower);
-        _rateOfFireBar.fillAmount = GetStatsRatio(tankSelected.RateOfFire, _maxRateOfFire);
+        _rateOfFireBar.fillAmount = GetStatsRatio(Mathf.Pow(tankSelected.RateOfFire, -1), _maxRateOfFire);
         _speedBar.fillAmount = GetStatsRatio(tankSelected.MaxMovementSpeed, _maxSpeed);
     }
 

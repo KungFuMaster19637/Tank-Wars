@@ -7,6 +7,11 @@ public class SelectManager : MonoBehaviour
     public static TankSO SelectedTank; 
     public static MapSO SelectedMap;
 
+    public List<TankSO> TankList = new List<TankSO>();
+    public List<MapSO> MapList = new List<MapSO>();
+    public List<Sprite> FlagList = new List<Sprite>();
+    public Transform TankSpawn;
+
     #region Singleton
     public static SelectManager Instance { get; private set; }
 
@@ -31,10 +36,6 @@ public class SelectManager : MonoBehaviour
     }
     #endregion
 
-    public List<TankSO> TankList = new List<TankSO>();
-    public List<MapSO> MapList = new List<MapSO>();
-    public List<Sprite> FlagList = new List<Sprite>();
-    public Transform TankSpawn;
 
 
 

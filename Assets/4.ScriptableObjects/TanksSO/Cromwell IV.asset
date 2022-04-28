@@ -16,12 +16,12 @@ MonoBehaviour:
   VehicleFaction: 5
   VehiclePrefab: {fileID: 6873381237349259736, guid: c8d842c85d07a4c4d84f776f5856b6dd, type: 3}
   CurrentHealth: 0
-  MaxHealth: 2147
+  MaxHealth: 960
   RuntimeGO: {fileID: 0}
-  Ammo: {fileID: 0}
-  AmmoCapacity: 7
-  MoveForce: 12
-  MaxMovementSpeed: 2
-  MaxRotationSpeed: 2
-  RateOfFire: 42
-  FirePower: 2
+  Ammo: {fileID: 11400000, guid: 435175dd3e5e4af45a14a32118d962db, type: 2}
+  AmmoCapacity: 6
+  MoveForce: 3
+  MaxMovementSpeed: 13
+  MaxRotationSpeed: 18
+  RateOfFire: 1.6
+  FirePower: 195

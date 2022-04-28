@@ -15,13 +15,13 @@ MonoBehaviour:
   VehicleName: Matilda II
   VehicleFaction: 5
   VehiclePrefab: {fileID: 1426530566298796796, guid: 67a58b4aab404a4418e2528d81bf8752, type: 3}
-  CurrentHealth: 0
-  MaxHealth: 450
+  CurrentHealth: 580
+  MaxHealth: 580
   RuntimeGO: {fileID: 0}
-  Ammo: {fileID: 0}
-  AmmoCapacity: 2
-  MoveForce: 1
-  MaxMovementSpeed: 2
-  MaxRotationSpeed: 4
-  RateOfFire: 10
-  FirePower: 10
+  Ammo: {fileID: 11400000, guid: d9d9b789d902f1540b52804cae01ddd3, type: 2}
+  AmmoCapacity: 8
+  MoveForce: 8
+  MaxMovementSpeed: 16
+  MaxRotationSpeed: 45
+  RateOfFire: 0.8
+  FirePower: 100

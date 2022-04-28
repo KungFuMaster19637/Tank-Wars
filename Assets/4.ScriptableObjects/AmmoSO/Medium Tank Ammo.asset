@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Medium Tank Ammo
   m_EditorClassIdentifier: 
   AmmoUI: {fileID: 5169316867630700123, guid: 0fbaa05a6027bd64183546477408512c, type: 3}
-  TravelSpeed: 120
+  TravelSpeed: 110
   FirePointRotation: {fileID: 0}
   AmmoPrefab: {fileID: 4004072228076265587, guid: 3d06e42e88c602641875cbcabb3472a3, type: 3}
   ImpactParticles: {fileID: 0}

@@ -7,10 +7,29 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private Transform _tankSpawnLocation;
     [SerializeField] private GameUI _gameUI;
 
-    private void Awake()
+    #region Singleton
+    public static GameplayManager Instance { get; private set; }
+
+
+    public void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         Init();
     }
+
+
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
+    #endregion
 
     private void Init()
     {

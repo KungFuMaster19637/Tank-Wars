@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heavy Tank Ammo
   m_EditorClassIdentifier: 
   AmmoUI: {fileID: 5169316867630700123, guid: 133ba2061c9cdd2419c1785d12705056, type: 3}
-  TravelSpeed: 150
+  TravelSpeed: 120
   FirePointRotation: {fileID: 0}
   AmmoPrefab: {fileID: 4295010484411717248, guid: 319c136f6c8ecf14c9ed63efa9efbfa7, type: 3}
   ImpactParticles: {fileID: 0}

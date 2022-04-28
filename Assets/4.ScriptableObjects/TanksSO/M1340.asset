@@ -15,13 +15,13 @@ MonoBehaviour:
   VehicleName: M1340
   VehicleFaction: 2
   VehiclePrefab: {fileID: 6140476477111920473, guid: 7656d018807872a43afc07c6f123e40d, type: 3}
-  CurrentHealth: 0
-  MaxHealth: 0
+  CurrentHealth: 340
+  MaxHealth: 340
   RuntimeGO: {fileID: 0}
-  Ammo: {fileID: 0}
-  AmmoCapacity: 47
-  MoveForce: 12
-  MaxMovementSpeed: 4
-  MaxRotationSpeed: 575
-  RateOfFire: 12
-  FirePower: 0
+  Ammo: {fileID: 11400000, guid: 1d013c5b20ee30f4a922cee18caf6ae5, type: 2}
+  AmmoCapacity: 12
+  MoveForce: 8
+  MaxMovementSpeed: 25
+  MaxRotationSpeed: 75
+  RateOfFire: 0.2
+  FirePower: 40

@@ -15,8 +15,8 @@ MonoBehaviour:
   VehicleName: Tiger I
   VehicleFaction: 1
   VehiclePrefab: {fileID: 7841080611381871066, guid: 5ffc02968d597984ba7278ae31bfa968, type: 3}
-  CurrentHealth: 0
-  MaxHealth: 980
+  CurrentHealth: 1080
+  MaxHealth: 1080
   RuntimeGO: {fileID: 0}
   Ammo: {fileID: 11400000, guid: 435175dd3e5e4af45a14a32118d962db, type: 2}
   AmmoCapacity: 4
@@ -24,4 +24,4 @@ MonoBehaviour:
   MaxMovementSpeed: 12
   MaxRotationSpeed: 12
   RateOfFire: 1.2
-  FirePower: 80
+  FirePower: 180
