@@ -37,7 +37,6 @@ public class TankMovement : MonoBehaviour
 
             float currentSpeed = _rigidbody.velocity.magnitude;
             float actualForce = _tankSO.MoveForce * (1 - currentSpeed / _tankSO.MaxMovementSpeed);
-            Debug.Log(actualForce);
             _rigidbody.AddForce(moveDir.normalized * actualForce * _rigidbody.mass);
         }
     }

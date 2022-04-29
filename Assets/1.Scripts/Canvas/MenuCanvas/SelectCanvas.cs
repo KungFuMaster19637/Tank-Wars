@@ -113,6 +113,7 @@ public class SelectCanvas : AnimatedCanvasVirtual
         {            
             _currentTankGO.GetComponent<TankController>().enabled = false;
             _currentTankGO.GetComponent<TankMovement>().enabled = false;
+            _currentTankGO.GetComponent<TankController>().HideHealthbar();
         }
     }
 

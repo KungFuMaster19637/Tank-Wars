@@ -6,6 +6,6 @@ using UnityEngine;
 
 public class DestroySO : ScriptableObject
 {
-    public float MaxHealth;
     public float CurrentHealth;
+    public float MaxHealth;
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TankController : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class TankController : MonoBehaviour
 
     [SerializeField] private TankSO _tankSO;
     [SerializeField] private Transform _firePoint;
+    [SerializeField] private Image _healthbar;
 
     private int _currentAmmo;
     private Coroutine _shootLock;
+    public bool PlayerLock = false;
 
     private void Awake()
     {
@@ -22,6 +25,7 @@ public class TankController : MonoBehaviour
 
     private void Update()
     {
+        if (PlayerLock == false) return;
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
@@ -36,6 +40,11 @@ public class TankController : MonoBehaviour
     {
         _tankSO.CurrentHealth = _tankSO.MaxHealth;
     }
+    public void HideHealthbar()
+    {
+        _healthbar.gameObject.SetActive(false);
+    }
+
 
     #region Shooting
     private void Shoot()
@@ -75,9 +84,40 @@ public class TankController : MonoBehaviour
     }
     #endregion
 
+    #region Damage & Health
+    private void RefreshHealthbar()
+    {
+        _healthbar.fillAmount = _tankSO.CurrentHealth / _tankSO.MaxHealth;
+    }
+
     public void TakeDamage(float incomingDamage)
     {
-        SelectManager.SelectedTank.CurrentHealth -= incomingDamage;
-        e_TakenDamage();
+        if (_tankSO.CurrentHealth - incomingDamage <= 0)
+        {
+            TankDestroyed();
+            if (PlayerLock == true)
+            {
+                //Game over
+                e_TakenDamage();
+            }
+        }
+        else
+        {
+            _tankSO.CurrentHealth -= incomingDamage;
+            RefreshHealthbar();
+            if (PlayerLock == true)
+            {
+                Debug.Log("this tnk is yours");
+                e_TakenDamage();
+            }
+        }
     }
+
+    private void TankDestroyed()
+    {
+        Destroy(gameObject);
+        //play death particles;
+    }
+
+    #endregion
 }

@@ -35,11 +35,15 @@ public class GameplayManager : MonoBehaviour
     {
         if (SelectManager.SelectedTank == null)
         {
-            Instantiate(SelectManager.Instance.TankList[0].VehiclePrefab, _tankSpawnLocation);
+            GameObject selectedTank = Instantiate(SelectManager.Instance.TankList[0].VehiclePrefab, _tankSpawnLocation);
+            selectedTank.tag = "Player";
+            selectedTank.GetComponent<TankController>().PlayerLock = true;
         }
         else
         {
-            Instantiate(SelectManager.SelectedTank.VehiclePrefab, _tankSpawnLocation);
+            GameObject selectedTank = Instantiate(SelectManager.SelectedTank.VehiclePrefab, _tankSpawnLocation);
+            selectedTank.tag = "Player";
+            selectedTank.GetComponent<TankController>().PlayerLock = true;
         }
         Instantiate(_gameUI);
     }
