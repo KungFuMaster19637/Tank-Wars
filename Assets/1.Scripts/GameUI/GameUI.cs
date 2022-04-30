@@ -6,9 +6,16 @@ using TMPro;
 
 public class GameUI : MonoBehaviour
 {
+    [Header("Ammo")]
     [SerializeField] private Transform _ammoSpawnUI;
+
+    [Header("Health")]
     [SerializeField] private Image _healthBar;
     [SerializeField] private TMP_Text _healthText;
+
+    [Header("Objective")]
+    public Transform _objectiveHolder;
+    [SerializeField] private ObjectiveUIController[] _objectiveUIs;
 
     private int _ammoIndex;
 
@@ -20,6 +27,7 @@ public class GameUI : MonoBehaviour
         TankController.e_TankShot += OnTankShot;
         TankController.e_TankReloaded += OnTankReload;
         TankController.e_TakenDamage += OnDamageTaken;
+        ObjectiveController.e_ObjectiveCompleted += OnObjectiveCompleted;
     }
 
 
@@ -27,6 +35,9 @@ public class GameUI : MonoBehaviour
     {
         TankController.e_TankShot -= OnTankShot;
         TankController.e_TankReloaded -= OnTankReload;
+        TankController.e_TakenDamage -= OnDamageTaken;
+        ObjectiveController.e_ObjectiveCompleted -= OnObjectiveCompleted;
+
     }
     private void InitTankAmmoUI()
     {
@@ -57,5 +68,10 @@ public class GameUI : MonoBehaviour
         float maxHealth = SelectManager.SelectedTank.MaxHealth;
         _healthText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
         _healthBar.fillAmount = currentHealth / maxHealth;
+    }
+
+    private void OnObjectiveCompleted(int objectiveID)
+    {
+        _objectiveUIs[objectiveID].ObjectiveCompleted();
     }
 }

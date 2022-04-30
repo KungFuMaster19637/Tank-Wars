@@ -45,6 +45,12 @@ public class GameplayManager : MonoBehaviour
             selectedTank.tag = "Player";
             selectedTank.GetComponent<TankController>().PlayerLock = true;
         }
-        Instantiate(_gameUI);
+        GameObject spawnedUI = Instantiate(_gameUI.gameObject);
+        ObjectiveManager.Instance.Init(spawnedUI);
+    }
+
+    public GameUI GetGameUI()
+    {
+        return _gameUI;
     }
 }
