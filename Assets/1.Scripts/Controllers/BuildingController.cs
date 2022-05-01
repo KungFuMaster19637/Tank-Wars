@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class BuildingController : MonoBehaviour
 {
+    [SerializeField] private ObjectiveController _objectiveController;
     [SerializeField] private DestroySO _destroySO;
     [SerializeField] private Image _healthbar;
     [SerializeField] private ParticleSystem _destructionParticles;
@@ -40,6 +41,10 @@ public class BuildingController : MonoBehaviour
 
     private void BuildingDestroyed()
     {
+        if (_objectiveController)
+        {
+            _objectiveController.ObjectiveCompleted();
+        }
         Destroy(gameObject);
     }
 }

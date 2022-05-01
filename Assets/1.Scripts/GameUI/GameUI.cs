@@ -17,6 +17,8 @@ public class GameUI : MonoBehaviour
     public Transform _objectiveHolder;
     [SerializeField] private ObjectiveUIController[] _objectiveUIs;
 
+    
+
     private int _ammoIndex;
 
     private void Awake()
@@ -72,6 +74,23 @@ public class GameUI : MonoBehaviour
 
     private void OnObjectiveCompleted(int objectiveID)
     {
-        _objectiveUIs[objectiveID].ObjectiveCompleted();
+         ObjectiveSO currentObjective = ObjectiveManager.Instance.GetObjectiveSO();
+        if (currentObjective.Objectives[objectiveID].ObjectiveMaxCount > 1)
+        {
+            currentObjective.Objectives[objectiveID].ObjectiveCurrentCount++;
+            _objectiveHolder.GetChild(objectiveID).GetComponent<ObjectiveUIController>().OnCountChanged(currentObjective.Objectives[objectiveID].ObjectiveCurrentCount);
+            if (currentObjective.Objectives[objectiveID].ObjectiveCurrentCount == currentObjective.Objectives[objectiveID].ObjectiveMaxCount)
+            {
+                ObjectiveManager.Instance.OnObjectiveCompleted(objectiveID);
+                _objectiveHolder.GetChild(objectiveID).GetComponent<ObjectiveUIController>().ObjectiveCompleted();
+            }
+        }
+        else
+        {
+            ObjectiveManager.Instance.OnObjectiveCompleted(objectiveID);
+            _objectiveHolder.GetChild(objectiveID).GetComponent<ObjectiveUIController>().ObjectiveCompleted();
+        }
+
+        //_objectiveUIs[objectiveID].ObjectiveCompleted();
     }
 }

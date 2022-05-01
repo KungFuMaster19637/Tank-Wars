@@ -13,6 +13,7 @@ public class TankController : MonoBehaviour
     [SerializeField] private Transform _firePoint;
     [SerializeField] private Image _healthbar;
 
+    [SerializeField] private ObjectiveController _objectiveController;
     private int _currentAmmo;
     private Coroutine _shootLock;
     public bool PlayerLock = false;
@@ -115,6 +116,10 @@ public class TankController : MonoBehaviour
 
     private void TankDestroyed()
     {
+        if (_objectiveController)
+        {
+            _objectiveController.ObjectiveCompleted();
+        }
         Destroy(gameObject);
         //play death particles;
     }

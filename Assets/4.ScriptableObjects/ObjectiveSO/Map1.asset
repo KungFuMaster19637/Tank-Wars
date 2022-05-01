@@ -15,9 +15,11 @@ MonoBehaviour:
   Objectives:
   - ObjectiveID: 0
     Description: Kill the tanks
-    ObjectiveCount: 2
+    ObjectiveCurrentCount: 0
+    ObjectiveMaxCount: 2
     Completed: 0
   - ObjectiveID: 1
     Description: Destroy the ammunition
-    ObjectiveCount: 1
+    ObjectiveCurrentCount: 0
+    ObjectiveMaxCount: 1
     Completed: 0
